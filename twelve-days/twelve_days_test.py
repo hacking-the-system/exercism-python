@@ -158,7 +158,6 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_recites_first_three_verses_of_the_song(self):
         expected = [recite(n, n)[0] for n in range(1, 4)]
-        print(expected)
         self.assertEqual(recite(1, 3), expected)
 
     def test_recites_three_verses_from_the_middle_of_the_song(self):

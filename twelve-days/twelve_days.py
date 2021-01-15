@@ -30,11 +30,17 @@ def recite(start_verse, end_verse):
         12: "twelve Drummers Drumming"
     }
 
-    if end_verse > 1:
-        for i in range(end_verse, 1, -1):
+    if start_verse > 1:
+        for i in range(start_verse, 1, -1):
             song += stanzas[i]
             song += ", " if i > 2 else ", and "
     
     last_stanza = "a Partridge in a Pear Tree."
     song += last_stanza
-    return [song]
+    result_song = [song]
+
+    if (start_verse < end_verse):
+        for i in range(start_verse, end_verse):
+            result_song += recite(i+1, i+1)
+
+    return result_song
